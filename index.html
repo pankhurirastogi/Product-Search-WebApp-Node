@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- link rel = "stylesheet" href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"> -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+	
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-svg-round-progressbar/0.4.8/roundProgress.min.js"></script>
+	<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+	<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+<!-- 	<script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script> 
+ -->	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-svg-round-progressbar/0.4.8/roundProgress.min.js"></script>
+	<script type="text/javascript" src="angularfunction.js"></script>
+	<script type="text/javascript">
+		
+		 $(document).ready(function(){
+	  		$('[data-toggle="tooltip"]').tooltip();   
+		 });
+	</script>
+	<title></title>
+	<style type="text/css">
+	    input:focus:required:invalid {border: 2px solid red;}
+		input:required:valid { border: 2px solid black; }
+
+
+		.round-progress-wrapper .ng-isolate-scope{
+
+			padding-bottom:  20% !important;
+		}
+
+		/*.tooltip-inner{
+		max-width: 50px;
+		text-align: center;
+		background-color: rgb(61,60,62);
+		color: rgb(159,158,159);
+		border-radius: .25rem;
+		}*/
+
+
+		@media screen and (max-width : 320px)
+		{
+		  .progress-wrapper .text
+		  {
+		    font-size: 1.2px;
+		  }
+		}
+		@media screen and (max-width : 1204px)
+		{
+		  .progress-wrapper .text
+		  {
+		    font-size: 1.2px;
+		  }
+		}
+
+		.selected {
+  		background-color: #BEC0C2  !important;
+		}
+
+		.form-group.required .control-label:after {
+			  content:"*";
+			  color:red;
+			}
+
+		.red{
+			border : 1px solid red;
+		}
+
+		a:hover {
+		 cursor:pointer;
+		}
+
+		.btn-pankhu:focus{
+			color: black!important;
+		}
+
+		.ng-hide {
+  			width:0;
+  			background-color: transparent;
+  			right: 100%;
+		}
+
+		#searchres.ng-hide 
+		{
+				height:0px;
+				width:auto;
+				top:0;
+				/*//left:1780px;*/
+				left:100%;
+				position: relative;
+				transition: all linear 0s; 
+		}
+
+		#progbar.ng-hide
+		{
+				height:0px;
+				width:auto;
+				top:0;
+				/*//left:1780px;*/
+				left:-100%;
+				position: relative;
+				transition: all linear 0s; 
+		}
+
+
+
+		.btn.selected {
+			color: white;
+			background: black;
+		}
+
+		#itemRes.ng-hide{
+			height:0px;
+			width:auto;
+			top:0;
+			/*left:-1780px;*/
+			left: -100%;
+			position: relative;
+			transition: all linear 0s;
+		}
+
+
+		#wishListDiv.ng-hide{
+				height:0px;
+				width:auto;
+				top:0;
+				/*//left:1780px;*/
+				left:100%;
+				position: relative;
+				transition: all linear 0s;
+		}
+
+		.animatClass{
+			width:auto;
+			height:auto;
+			top: 0;
+			left: 0;
+			transition: all linear 0.5s;
+			position: relative;
+			}
+		.testBox{
+		  margin:10px 0 20px 0;
+		  padding:10px;
+		  border:1px solid rgba(0,0,0,0.2);
+		  background:#f00;
+		  color:#fff;
+		  border-radius:4px;
+		  left:200px;
+
+		  -webkit-transition:all linear 0.5s;
+		  transition:all linear 0.5s;
+}
+		.testBox.ng-hide{
+			
+  			
+ 
+  			left: -200px;
+
+		}
+
+		#wishlistTable a{
+			color: #0073ea;
+		}
+
+
+
+		/*.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  			background-color: yellow;
+			}
+*/
+		
+		.form-class{
+			background-color: #1a1f23;
+		}
+
+		.btn:focus,.btn:active {
+		   outline: none !important;
+		   box-shadow: none;
+		   color: white;
+		   background-color: black;
+		}
+
+		.btn.__current__{
+			color: white;
+			background: black;
+		}
+
+		#myWishTable{
+			width: 100%;
+			margin: auto;
+		}
+
+		/*.pagination{
+			text-align: center;
+		}
+*/
+		.pagination a {
+		padding: 8px 16px;
+		float: left;
+		color: black;
+		text-decoration: none;
+		}
+
+		ul.pagination.justify-content-center>li.active{
+		background-color: black !important;
+		 	color: #ffffff !important;
+		}
+		ul.pagination.justify-content-center>li.active>a{
+		 	color: white !important;
+		}
+		.pagination a:hover:not(.active) {background-color: #ddd;}
+
+		label{
+			color: white;
+		}
+
+		td {
+			border: none;
+		}
+
+		.black-background {background-color:#000000;}
+		.white {color:#ffffff;}
+		.white-background{background-color:#ffffff;}
+		.black{color: #000000;}
+
+		#myTable{
+
+		    width : 100%;
+		    border: none;
+		    margin: auto;
+
+		}
+		/*.nav>button:active{
+			background-color: black;
+
+		}*/
+
+		.progress-wrapper{
+    	position: relative;
+	}
+
+		.progress-wrapper .text{
+		    position: absolute;
+		    top: 50%;
+		    left: 0;
+		    transform: translateY(-50%);
+		    -webkit-transform: translateY(-50%);
+		    text-align: center;
+		    width: 100%;
+		    z-index: 1;
+		}
+
+		#idItmTable{
+
+		    width : 75%;
+		    margin: auto;
+		}
+
+		#idSimItmTable{
+			width : 100%;
+		    margin: auto;
+		}
+		#idShipTable{
+
+		    width : 75%;
+		    margin: auto;
+		}
+		#idPhotoTable{
+
+			width : 75%;
+		    margin: auto;
+		}
+		
+		#myTable a{
+			color: #0073ea;
+		}
+
+		.imgrow {
+		  display: -ms-flexbox; /* IE10 */
+		  display: flex;
+		  -ms-flex-wrap: wrap; /* IE10 */
+		  flex-wrap: wrap;
+		  padding: 0 4px;
+		}
+
+/* Create four equal columns that sits next to each other */
+		.imgcolumn {
+		  -ms-flex: 25%; /* IE10 */
+		  flex: 33.3%;
+		  max-width: 33.3%;
+		  padding: 0 4px;
+		}
+
+		.imgcolumn .imgdiv {
+		  margin-top: 8px;
+		  vertical-align: middle;
+		}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+		@media screen and (max-width: 600px) {
+		  .imgcolumn {
+		    -ms-flex: 100%;
+		    flex: 100%;
+		    max-width: 100%;
+		  }
+		}
+
+
+		@media screen and (max-width: 600px) {
+		  .changewidth{
+		    margin: 0px;
+		    padding-left: 0px;
+		    padding-right: 0px;
+		  }
+		}
+		
+		.divrow{
+		  display: -ms-flexbox; /* IE10 */
+		  display: flex;
+		  -ms-flex-wrap: wrap; /* IE10 */
+		  flex-wrap: wrap;
+		  padding: 0 4px;
+		  margin-bottom: 15px;
+		  background-color: black;
+
+		}
+
+		/*.colimg{
+			flex: 25%;
+			max-width: 25%;
+			padding: 0 4px;
+			height: 100%;
+
+
+		}*/
+		.colimg {
+    flex: 25%;
+    max-width: 15%;
+    padding: 0 4px;
+    height: 100%;
+}
+
+		/*.coltext{
+			flex:  70%;
+			max-width: 70%;
+			padding: 0 4px;
+			height: 100%;
+
+		}*/
+		.coltext {
+	    flex: 80%;
+	    max-width: 80%;
+	    padding: 15px 4px;
+	    height: 100%;
+		}
+
+		@media screen and (max-width: 600px) {
+		  .colimg{
+		    -ms-flex: 100%;
+		    flex: 100%;
+		    max-width: 100%;
+		    
+		  }
+
+		}
+
+		@media screen and (max-width: 600px) {
+		  .coltext{
+		    -ms-flex: 100%;
+		    flex: 100%;
+		    max-width: 100%;
+		  }
+		  
+		}
+
+		@media screen and (max-width: 600px) {
+		  .colimg img{
+		    height: 120px;
+		    width: 120px;
+		  }
+		  
+		}
+
+		#mobilebutton.mobile { display: none }
+		@media (max-width: 640px) {
+		    #mobilebutton.mobile { display: block }
+		    #desktopbutton.desktop { display: none }
+		}
+
+	</style>
+</head>
+<body ng-app="ProductSearchApp" ng-controller="SearchController" ng-cloak>
+	<div class="container">
+		<form class="form-class">
+			<h2 style="text-align: center; color:white; margin:20px;">Product Search</h2>
+			<div class="form-group row">
+				<div class=" col-sm-1 col-md-1"></div>
+   				<div class="col col-sm-8 col-md-10">
+					<div class="form-group row required" >
+						<label class="control-label col-sm-2 col-md-2" for="Keyword">keyword</label>
+						<div class="col  col-sm-8">
+							<input type="text" name="keyword" placeholder="Enter Product Name (eg. iphone 8)" class="form-control" ng-required="1" ng-change="checkKeyword()" ng-class="{red :invalidKeyword }" ng-model="keyword" required="true">
+							<span ng-show="invalidKeyword"> <p style="color: red;">Please enter valid keyword</p></span>
+						</div>
+					</div>
+					<!--- form control causing issue ------->
+					<div class="form-group row">
+						<label class="control-label col-sm-2  col-md-2" for="Category">Category</label>
+							<!-- <div class="col-md-6 col-sm-4"> -->
+							<div class="col  col-sm-4 col-xs-6">
+								<select name="Category" id="catSelect" ng-model="Category" class="form-control">
+									<option selected=selected value="">All Categories</option>
+									<option value="550">Art</option>
+									<option value=" 2984" >Baby</option>
+									<option value="267">Books</option>
+									<option value="11450">Clothing, Shoes & Accessories</option>
+									<option value="58058">Computers/Tablets & Networking</option>
+									<option value="26395">Health & Beauty</option>
+									<option value="11233">Video Games & Consoles</option>
+								</select> 
+						   </div>	
+					</div>
+					
+					<div class="form-group row">
+						<label class="control-label col-sm-2 col-md-2">Condition</label>	
+						<div class="col col-sm-10">
+							<div class="form-check form-check-inline">
+								<input  class="form-check-input" type="checkbox" name="New" value="New" id="ch1" ng-model="New">
+								<label class="form-check-label" for="ch1">New</label>
+							</div>	
+
+							<div class="form-check form-check-inline">
+								<input type="checkbox"  class="form-check-input" name="Used" value="Used" id="ch2" ng-model="Used">
+								<label class="form-check-label" for="ch2">Used</label>
+							</div>	
+
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"name="Unspecified" value="Unspecified" id="ch3" ng-model="Unspecified">
+								<label class="form-check-label" for="ch3">Unspecified</label>
+							</div>	
+
+						</div>	
+					</div>
+					<div class="form-group row">
+							<label class="control-label col-sm-2 col-md-2">Shipping Options</label>	
+								<div class="col col-sm-10">
+									<div class="form-check form-check-inline">
+										<input type="checkbox"  class="form-check-input" name="LocalPickupOnly" id="sh1"value="true" ng-model="LocalPickupOnly">
+										<label class="form-check-label" for="sh1">Local Pickup</label>  
+									</div>  
+									<div class="form-check form-check-inline">
+									 	
+										<input type="checkbox" class="form-check-input" name="FreeShippingOnly" id="sh2" value="true" ng-model="FreeShippingOnly" >
+										<label class="form-check-label" for="sh2"> &nbsp;Free Shipping
+									</label>
+									</div>
+							</div>
+					</div>
+					<div class="form-group row">
+						<label class="control-label col-sm-2 col-md-2" for="dist">Distance (Miles)</label>
+						<div class="col col-sm-10">
+							<input id="dist1" type="text" name="dist" size="10" placeholder="10" ng-model="dist">
+						</div>
+					</div>
+					
+					<div class="form-group row required">
+						<label class="control-label col-sm-2 col-md-2">From</label>
+						<div class="col col-sm-8">
+							<div class="form-check">
+							 
+								<input  class="form-check-input" id="rad1" type="radio" name="loc" value="curr" checked ng-change="handleRadioChnageHere()" ng-model="loc">
+								<label class="form-check-label" for="rad1"> Current Location</label>
+							</div>
+							<div class="form-check">
+							 
+									<input  class="form-check-input" id="rad2" type="radio"  name="loc" value="given" ng-change="handleRadioChange(event)" ng-model="loc">
+									 <label class="form-check-label" for="rad2">Other, Please specify the zip code:</label>
+							</div>
+							<!-- <input  id="zip1" type="text" title="zip code" style="margin-top: 10px;"  required placeholder="zip code" name="givenZip" ng-change="checkZip()" ng-disabled="loc=='curr'" ng-model="givenZip" class="form-control"> -->
+							<md-autocomplete flex required
+					           md-input-name="autocompleteField"
+					           ng-disabled="loc=='curr'"
+					           required = true;
+					           ng-model="givenZip"
+					           md-no-cache="noCache"
+					           md-selected-item="selectedZipCode"
+					           md-selected-item-change = "checkZip(searchText)"
+					           md-search-text="searchText"
+					           md-items="item in querySearch(searchText)"
+					           md-input-id="keywordInput"
+					           md-clear-button="false"
+					           md-search-text-change="searchTextChange(searchText)"
+					           ng-blur="focusOut()" >
+          					<md-item-template>
+				           <span md-highlight-text="searchText" >{{item}}</span>
+				         </md-item-template>
+				           <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+				               <div ng-message="required">Please enter a keyword.</div></div>
+				       	</md-autocomplete>
+							<span ng-show="invalidZipCode"> <p style="color: red;">Please enter valid ZipCode</p></span>
+						</div>
+					</div>
+
+
+					
+					<input type="hidden" id="hereZip" name="hereZip" value="" ng-model="hereZip">
+					<div class="btn-group">
+						<button id="sub" type="button" name="search" class="btn btn-pankhu" style="background-color: white; margin-right: 10px; margin-bottom: 10px" ng-click="sendData()" ng-disabled="invalidKeyword||keyword=='' || (loc==='given' && (!givenZip || invalidZipCode))">
+						<span><i class="material-icons md-18">search</i></span>Search
+					    </button>		
+						<button type="reset" name="clear" class="btn btn-pankhu" style="background-color: white; margin-bottom:10px; " ng-click="reset()"><i class="material-icons md-18">clear_all</i>Clear</button>
+					</div>
+					<!-- </div> -->
+      			</div>
+      			<div class=" col-sm-1 col-md-1"></div>
+     	 	</div>
+ 		</form>
+
+		<div class="container text-center">
+			<button id="resButton" class="btn black-background white btn-dark" onclick="handleButtonChanges(this)" ng-click="displayContent='Results'; showContent='products'">Results</button>
+			<button id="wishButton"  class=" btn btn-link white-background black" onclick="handleButtonChanges(this)" ng-click="displayContent='WishList'; displayWishList()">Wish List</button><br>
+	    </div>
+		<div class="progress" ng-if='showProgressBar'>
+			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"> 	
+  			 </div>
+
+		</div>
+		<div ng-hide="animateProgHide" id="progbar" class="animatClass">
+			<div class="progress" ng-if='showItmProgressBar' ng-hide="!showItmProgressBar">
+		  		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+		  			
+		  		</div>
+			</div>
+		</div>	
+		<div class="progress" ng-if='showBackProgressBar'>
+	  		<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+	  			
+	  		</div>
+
+		</div>
+
+
+	<div ng-hide="displayContent!='Results'" class="animatClass container" id="searchres" >
+	
+		<div ng-if="response && showContent && showContent=='products'">
+			
+			<!-- <div><button ng-disabled="itemClickedDis" ng-click="navigatetoItemDetails()">Detail</button></div> -->
+			<div class="container">
+
+			   <div class="row justify-content-end">
+			      <button class="btn btn-light"  ng-disabled="itemClickedDis" ng-click="navigatetoItemDetails()">Details<i class="material-icons">keyboard_arrow_right</i></button>
+			    </div>
+			</div>
+			
+			<div class="table-responsive container">
+				<table border="1" 	id="myTable"  class=" table table-dark table-striped  table-hover">
+					<tr>
+					    <th>#</th>
+					    <th>Image</th>
+					    <th>Title</th>
+					    <th>Price</th>
+					    <th>Shipping</th>
+					    <th>Zip</th>
+					    <th>Seller</th>
+					    <th>Wish List</th>
+			  		</tr>
+
+					<tr ng-repeat="x in response.slice(((currentPage-1)*10), ((currentPage)*10)) | limitTo: 10" ng-class="{selected: x.itemid[0] === selectedItem}">
+					    <td>{{ x.index }}</td>
+					    <!-- <td>{{ x.image }}</td> -->
+					    <td ng-if="x.image!='N/A'"><a href="{{x.image}}" target="_blank"><img src="{{x.image}}" width="120px" height="120px"></a></td>
+					    <td ng-if="x.image=='N/A'">{{x.image}}</td>
+					    <td><a ng-click= "getRequest(x,displayContent);getPhotos();" style="white-space: nowrap;" data-toggle="tooltip" title="{{x.title}}" data-placement="bottom" onmouseover="$(this).tooltip('show')" > {{editURL(x.title)}}</a></td>
+					    <td>{{ x.price }}</td>
+					    <td>{{ x.shipping }}</td>
+					    <td>{{ x.zip }}</td>
+					    <td>{{ x.seller }}</td>
+					    <!-- <td></td> -->
+					    <div ng-init="icon='add'">
+					    <td ng-if="!checkIfPartOfWishlist(x.itemid[0])"><button class="btn btn-light" ng-click="addToWishList(x)"><i class="material-icons" >add_shopping_cart</i></button></td>
+					   
+					    <td ng-if="checkIfPartOfWishlist(x.itemid[0])"><button class="btn btn-light" ng-click="removFrmWishList(x)"><i  class="material-icons" style="color:gold;">remove_shopping_cart</i></button></td>
+
+			
+					   
+			  		</tr>
+				</table>
+			</div>
+			<pagination total-items="upperLimit" ng-model="currentPage" class="pagination-sm justify-content-center" items-per-page="10"></pagination>
+
+		</div>
+		<div ng-if="prodErr && showContent && showContent=='products'">
+
+			<p class="bg-warning text-white">{{prodErr}}</p>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+			 $(document).ready(function(){
+	 		$('[data-toggle="tooltip"]').tooltip();   
+		 });
+
+
+		
+
+	</script>
+	
+	
+	<div ng-hide="displayContent!='WishList'" id="wishListDiv" class="animatClass">
+		
+		<div style="float: right;"><button ng-disabled="itemWishClickedDis" ng-click="navigatetoItemDetails()">Detail<i class="material-icons">keyboard_arrow_right</i></button></div>
+		<br>
+		<div ng-if="displayWishArr && displayWishArr.length>0" class="table-responsive">
+
+			<table id="wishlistTable" border="1" class="table table-dark table-striped ">
+				<tr>
+				    <th>#</th>
+				    <th>Image</th>
+				    <th>Title</th>
+				    <th>Price</th>
+				    <th>Shipping</th>
+				    <th>Seller</th>
+				    <th>Wish List</th>
+		  		</tr>
+				<tr ng-repeat="x in displayWishArr | limitTo: 10" ng-class="{selected: x.itemid[0] === selectedItem}">
+				    <td>{{ $index + 1}}</td>
+				    <!-- <td>{{ x.image }}</td> -->
+				    <td ng-if="x.image!='N/A'"><a href="{{x.image}}" target="_blank"></a><img src="{{x.image}}" width="120px" height="120px"></td>
+				    <td ng-if="x.image=='N/A'">{{x.image}}</td>
+				    <td><a ng-click="getRequest(x,displayContent);getPhotos();" style="white-space: nowrap;" data-toggle="tooltip" title="{{x.title}}" data-placement="bottom" onmouseover="$(this).tooltip('show')">{{editURL(x.title)}}</a></td>
+				    <td>{{ x.price }}</td>
+				    <td>{{ x.shipping }}</td>
+				    <td>{{ x.seller }}</td>
+				    <td><button class="btn btn-light" ng-click="removFrmWishList(x)"><i  class="material-icons" style="color: gold;">remove_shopping_cart</i></button></td>
+				   
+		  		</tr>
+		  		<tr ng-if="displayWishArr && displayWishArr.length>0">
+		  			<td colspan="5">
+		  			</td>	
+		  			<td>
+		  				Total Shopping
+		  			</td>
+		  			<td>
+		  				{{getTotalShoppingPrice()}}
+		  			</td>
+		  		</tr>
+			</table>
+
+		</div>
+		<div ng-if="!displayWishArr || displayWishArr.length==0">
+		<p class="bg-warning text-white"> No Records found.</p>
+		</div>
+		
+	</div>
+
+	<div ng-hide="displayContent!='itemResults'"  id="itemRes" class="animatClass">
+		
+		<div ng-if="itemresp && showContent && showContent=='itemDetail'" style="text-align: center;"><h4>{{selectedItemTitle}}</h4></div>
+
+		<div ng-app="" ng-if="itemresp && showContent && showContent=='itemDetail'">
+
+			<!-- <div><button ng-click="navigateBack()">list</button></div> -->
+			<!-- <div style="float: right;">
+				<button id="shareBtn" ng-click="shareOnFacebook()"><img height="20px" width="20px" src="http://csci571.com/hw/hw8/Images/facebook.png"></button>
+				
+				
+
+				
+			</div> -->
+
+			<div class="row d-flex justify-content-end">
+				<button class="  mr-auto btn  btn-light" ng-click="navigateBack()"><i class="material-icons">keyboard_arrow_left</i>List</button>
+				 <button id="shareBtn" type="button"  ng-click="shareOnFacebook()" style="background: transparent;border: none;"><img height="35px" width="35px" src="http://csci571.com/hw/hw8/Images/facebook.png"></button>
+				 <button class="btn btn-light" ng-if="!checkIfPartOfWishlist(selectedItem)"><i class="material-icons" ng-click="addToWishList(selectedItmObj)">add_shopping_cart</i></button>
+				 <button class="btn btn-light" ng-if="checkIfPartOfWishlist(selectedItem)"><i  ng-click="removFrmWishList(selectedItmObj)"class="material-icons" style="color: gold;">remove_shopping_cart</i></button>
+
+			</div>
+			<br>
+
+			
+			<div id="myNavBar">      
+		  		<ul class="nav nav-tabs justify-content-end" role="tablist" style="flex-wrap: nowrap;">
+
+		  			<li class="nav-item active">
+	        			<button onclick="changeButtonStates(0)" ng-click="page='Product'" class="btn __current__" data-toggle="colo" style="float: right;">Product</button>
+	      			</li>
+	      			<li>
+	      				<button onclick="changeButtonStates(1)" ng-click="page='Photos'"  class="btn" data-toggle="colo" style="float: right;">Photos</button>
+	      			</li>
+	      			<li class="nav-item">
+	        			<button onclick="changeButtonStates(2)" ng-click="page='Shipping'" class="btn changewidth" data-toggle="colo" datastyle="float: right;">Shipping</button>
+	      			</li>
+	      			<li class="nav-item">
+	        			<button onclick="changeButtonStates(3)" ng-click="page='Seller'" class="btn changewidth" style="float: right;">Seller</button>
+	      			</li>
+	      			<li class="nav-item">
+	      				<button onclick="changeButtonStates(4)" id="mobilebutton" class="mobile btn" ng-click="page='Similar'; getSimilarItems()" data-toggle="colo" style="float: right; width:51px; margin:0px; padding-right: 0px; padding-left:0px">Related</button>
+	      			</li>
+	      			<li class="nav-item">
+	      				<button onclick="changeButtonStates(5)" id="desktopbutton" class="desktop btn" ng-click="page='Similar'; getSimilarItems()" data-toggle="colo" style="float: right;">Similar Products</button>
+	      			</li>
+	      				
+		  		</ul>
+	  		</div>
+	  		
+	  		<br>
+	  		<div ng-init="page='Product'"></div>
+				<div ng-show="page === 'Product'" class="table-responsive">
+					<table  ng-if="itemData" border="1"  class="table table-dark table-striped ">
+						<tr>
+							<td>
+								Product Images
+							</td>
+							<td>
+								<button  class="btn btn-link" data-toggle="modal" data-target="#exampleModal" style="color: green;">
+  								View Product Images here
+								</button>
+
+							</td>
+						</tr>
+						<tr ng-if ="itemData.Subtitle">
+							<td>SubTitle</td>
+							<td>{{itemData.Subtitle}}</td>
+						</tr>
+						<tr ng-if ="itemData.CurrentPrice">
+							<td>Price</td>
+							<td>${{itemData.CurrentPrice.Value}}</td>
+						</tr>
+						<tr ng-if ="itemData.Location">
+							<td>Location</td>
+							<td>{{itemData.Location}}</td>
+						</tr>
+						<tr ng-if ="itemData.ReturnPolicy && itemData.ReturnPolicy.ReturnsAccepted=='Returns Accepted'">
+							<td>Return Policy(US)</td>
+							<td>{{itemData.ReturnPolicy.ReturnsAccepted}} {{itemData.ReturnPolicy.ReturnsWithin}}</td>
+						</tr>
+						<tr ng-if ="itemData.ReturnPolicy && itemData.ReturnPolicy.ReturnsAccepted!='Returns Accepted'">
+							<td>Return Policy(US)</td>
+							<td>{{itemData.ReturnPolicy.ReturnsAccepted}}</td>
+						</tr>
+						<tr ng-repeat="y in itemData.ItemSpecifics.NameValueList">
+							<td>{{y.Name}}</td>
+							<td>{{y.Value[0]}}</td>
+						</tr>
+					</table>
+
+					<div ng-if="invalidItemErr">
+						
+						<div class="bg-warning text-white"><p>{{invalidItmErrMsg}}</p></div>
+						
+					</div>
+
+				</div>
+				<div ng-show="page ==='Shipping'" class="table-responsive">
+					<table border="1" class=" table table-dark table-striped " >
+						<tr ng-if ="shippingDetails.shippingServiceCost">
+							<td>Shipping Cost</td>
+
+							<td ng-if="shippingDetails.shippingServiceCost[0].__value__ != '0.0'">${{shippingDetails.shippingServiceCost[0].__value__}}</td>
+
+							<td ng-if="shippingDetails.shippingServiceCost[0].__value__ == '0.0'">free shipping</td>
+
+						</tr>
+						<tr ng-if ="shippingDetails.shipToLocations">
+							<td>Shipping Locations</td>
+							<td>{{shippingDetails.shipToLocations[0]}}</td>
+
+						</tr>
+						<tr ng-if ="shippingDetails.handlingTime">
+							<td>Handling Time</td>
+							<td ng-if="shippingDetails.handlingTime[0]>'1'">{{shippingDetails.handlingTime[0]}} days</td>
+							<td ng-if="shippingDetails.handlingTime[0]<='1'">{{shippingDetails.handlingTime[0]}} day</td>
+						</tr>
+						</tr>
+						<tr ng-if ="shippingDetails.expeditedShipping">
+							<td>Expedite Shipping</td>
+							<td ng-if="shippingDetails.expeditedShipping[0]=='true'"><i class="material-icons" style="color: green;">done</i>
+							</td>
+							<td ng-if="shippingDetails.expeditedShipping[0]=='false'"><i class="material-icons" style="color:red;">clear</i>
+						     </td>		
+
+						</tr>
+						<tr ng-if ="shippingDetails.oneDayShippingAvailable">
+							<td>One Day Shipping Available</td>
+							<td ng-if="shippingDetails.oneDayShippingAvailable[0]=='true'"><i class="material-icons" style="color: green;">done</i>
+							</td>
+							<td ng-if="shippingDetails.oneDayShippingAvailable[0]=='false'"><i class="material-icons" style="color:red;">clear</i>	
+							</td>
+							
+						</tr>
+						<tr ng-if ="itemData.ReturnPolicy && itemData.ReturnPolicy.ReturnsAccepted=='Returns Accepted'">
+							<td>Return Policy(US)</td>
+							<td><i class="material-icons" style="color: green;">done</i></td>
+						</tr>
+						<tr ng-if ="itemData.ReturnPolicy && itemData.ReturnPolicy.ReturnsAccepted!='Returns Accepted'">
+							<td>Return Policy(US)</td>
+							<td><i class="material-icons" style="color:red;">clear</i></td>
+						</tr>
+
+
+					</table>
+
+				</div>
+				<div ng-show="page === 'Seller'" class="table-responsive">
+					<table border="1" ng-if="itemData"   class="table table-dark table-striped">
+						<tr ng-if ="itemData.Seller && itemData.Seller.UserID">
+							<td colspan="2" style="text-align: center;">{{itemData.Seller.UserID}}</td>
+						</tr>
+						<tr ng-if ="itemData.Seller && itemData.Seller.FeedbackScore">
+							<td>Feedback Score</td>
+							<td>{{itemData.Seller.FeedbackScore}}</td>
+						</tr>
+						<tr ng-if ="itemData.Seller && itemData.Seller.PositiveFeedbackPercent">
+							<td>Popularity</td>
+							<td>
+							 <div class="progress-wrapper" style="padding-bottom: 10% !important; width: 32px; height: 32px;">
+									<round-progress
+									    max="100"
+									    current="itemData.Seller.PositiveFeedbackPercent"
+									    color="green"
+									    bgcolor="#eaeaea"
+									    radius="4"
+									    stroke="0.5"
+									    semi="false"
+									    rounded="true"
+									    clockwise="false"
+									    responsive="true"
+									    duration="800"
+									    animation="easeInOutQuart"
+									    animation-delay="0">
+									    	
+									    </round-progress>
+									    <div class="text">{{itemData.Seller.PositiveFeedbackPercent}}</div>
+							</div>
+							</td>
+						</tr>
+						<tr ng-if ="itemData.Seller && itemData.Seller.FeedbackRatingStar">
+							<td>Feedback Rating Star</td>
+							<!-- <td>itemData.Seller.FeedbackRatingStar</td> -->
+							<td ng-if="itemData.Seller.FeedbackScore >= 10000" ><i class="material-icons" style="color : {{itemData.Seller.FeedbackRatingStar}};">stars</i>
+							</td>
+							<td ng-if="itemData.Seller.FeedbackScore <10000" ><i class="material-icons" style="color : {{itemData.Seller.FeedbackRatingStar}};">star_border</i>
+							</td>
+
+						</tr>
+						<tr ng-if ="itemData.Seller && itemData.Seller.TopRatedSeller">
+							<td>Top Rated</td>
+							<!-- <td>{{itemData.Seller.TopRatedSeller}}</td> -->
+							<td ng-if="itemData.Seller.TopRatedSeller == true"><i class="material-icons" style="color: green;">done</i>
+							</td>
+							<td ng-if="itemData.Seller.TopRatedSeller== false"><i class="material-icons" style="color:red;">clear</i>
+						     </td>	
+
+
+						</tr>
+						<tr ng-if ="itemData.Storefront && itemData.Storefront.StoreName">
+							<td>Store Name</td>
+							<td>{{itemData.Storefront.StoreName}}</td>
+						</tr>
+						<tr ng-if ="itemData.Storefront && itemData.Storefront.StoreURL">
+							<td>By Product at</td>
+							<td><a style="color:green;"href="{{itemData.Storefront.StoreURL}}" target="_blank">Store</a></td>
+						</tr>
+
+					</table>
+
+					<div ng-if="invalidItemErr">
+						
+						<div><p>{{invalidItmErrMsg}}</p></div>
+						
+					</div>
+
+
+				</div>
+				<div ng-show="page === 'Similar'">
+					<div ng-if="simItmRes">
+						<div class="row">
+							<div class="col-sm-2" >
+								<select name="orderSelect"  ng-model="orderSelect" class="form-control">
+									<option selected=selected value="">Default</option>
+									<option value='title'>Product Name</option>
+									<option value='timeLeft'>Days Left</option>
+									<option value='price'>Price</option>
+									<option value='shippingcost'>Shipping Cost</option>
+								</select> 
+							</div>
+							<div class="col-sm-2">
+							<select name="reverseOrder" ng-disabled="orderSelect===''" ng-model="reverseOrder" class="form-control">
+								<option selected=selected value="">Ascending</option>
+								<option value='true' >Descending</option>
+							</select> 
+						  </div>
+					   </div>	
+					   <div ng-init="limit=5"></div>
+					   
+					   <!-- <div class="table-responsive">
+						<table ng-if="simItmRes.ack==='Success'"  class="table "  >
+							<div ng-init="limit=5"></div>
+							<tr ng-repeat="z in simItmRes.itemRecommendations.item | limitTo:limit | orderBy: orderSelect :reverseOrder " >
+								<td  style="border:none; padding:0 !important;">
+									
+									<div style=" margin-bottom: 15px; background-color:black; color: white; display: table; width: 100%">
+											<div style="float: left; height: 100%; padding: 10px 25px;">
+										    <img src="{{z.imageURL}}">
+										    </div>
+
+								    	<div style="height: 100%;padding: 20px;">
+											<span><a href="{{z.viewItemURL}}" target="_blank">{{z.title}}</a></span>
+											<br>
+											
+											
+											<span style="color: #3d5f61">price: ${{ z.price}}</span>
+											<br>
+										
+											<span>Shipping Cost: {{z.shippingcost}}</span>
+											<br>
+						
+											<span>Days Left :{{z.timeLeft}}</span>
+										   </div>
+									 
+					
+									</div>
+								</td>
+							</tr>
+
+						</table>
+					</div> -->
+					<div ng-if="simItmRes.ack==='Success'" >
+							
+							<div class="divrow"  ng-repeat="z in simItmRes.itemRecommendations.item | limitTo:limit | orderBy: orderSelect :reverseOrder ">
+										<div class="colimg">
+											<a href="{{z.imageURL}}" target="_blank"><img src="{{z.imageURL}}" style=" height: 140px;margin: 10px auto;width: 140px; "></a>
+											
+										</div>
+										<div class="coltext">
+											<span><a href="{{z.viewItemURL}}" target="_blank" style="color: #548078;">{{z.title}}</a></span>
+											<br>
+											
+											
+											<span style="color: #8ec287">price: ${{ z.price}}</span>
+											<br>
+										
+											<span style="color:gold;">Shipping Cost: ${{z.shippingcost}}</span>
+											<br>
+						
+											<span style="color: white;">Days Left :{{z.timeLeft}}</span>
+										  </div>
+							 </div>	
+								
+					</div>
+					
+						<br>
+						<br>
+					<div style="text-align: center;">
+						<span ng-show="simItmRes.itemRecommendations.item.length>limit">
+						<button class=" btn black-background white" ng-click="limit=simItmRes.itemRecommendations.item.length ;"> show More</button>
+						</span>
+						<span ng-show="simItmRes.itemRecommendations.item.length==limit && limit>5">
+						<button class="btn black-background white" ng-click="limit=5 ;"> show less</button>
+						</span>
+
+					</div>	
+
+				</div>
+				<div ng-if="simItmErr">
+
+					<div><p class="bg-warning text-white">{{simItmErrMsg}}</p></div>
+					
+				</div>	
+				
+
+			</div>
+
+				<div ng-show="page === 'Photos'">
+
+						<div class="imgrow"> 
+								  <div class="imgcolumn">
+									  	<div class="imgdiv" ng-repeat="imgs in ItmPhotos[2]">
+										<a href="{{imgs.link}}" target="_blank"><img  class="card-img" src="{{imgs.link}}" style="border:7px solid black;"></a>
+										</div>
+								  </div>
+								  
+								  <div class="imgcolumn">
+								  	<div class="imgdiv" ng-repeat="imgs in ItmPhotos[1]">
+									<a href="{{imgs.link}}" target="_blank"><img  class="card-img" src="{{imgs.link}}" style="border:7px solid black;"></a>
+									
+									</div> 
+								  </div>  
+								  <div class="imgcolumn">
+								  	<div class="imgdiv" ng-repeat="imgs in ItmPhotos[0]">
+									<a href="{{imgs.link}}" target="_blank"><img  class="card-img" src="{{imgs.link}}" style="border:7px solid black;"></a>
+									
+									</div>
+								   
+								  </div>
+								  
+							</div>
+
+				</div>
+		</div>
+		
+	</div>
+
+<!-- </div> --> <!---  addded for closing container--->	
+	
+<!-- 	</div>	 -->
+	<!-- </div> -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Product Images</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	        <!-- <div ng-if="pictureURLArray.length==0">
+		      	        	No Images found handle this 
+		      	        </div> -->
+			       		<div id="pictureGallery" ng-if="pictureURLArray"  class="carousel slide" data-ride="carousel">
+						  <div class="carousel-inner">
+
+						    <div class="carousel-item active">
+						      <a href="{{pictureURLArray[0]}}"  target="_blank">
+						      <img width="100%" src="{{pictureURLArray[0]}}" style="border: 3px solid black;" alt="First slide">
+						 	  </a>
+						    </div>
+						    <div class="carousel-item" ng-if="pictureURLArray && pictureURLArray.length>1" ng-repeat="xyz in pictureURLArray.slice(1,pictureURLArray.length)" >
+						      <a href="{{xyz}}" target="_blank">
+						      <img width="100%" ng-src="{{xyz}}" style="border: 3px solid black;"> 
+						  	  </a>
+
+						    </div>
+						  </div>
+						  <a class="carousel-control-prev" href="#pictureGallery" role="button" data-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black;"></span>
+						    <span class="sr-only" style="color: white;">Previous</span>
+						  </a>
+						  <a ng-if="pictureURLArray && pictureURLArray.length>1" class="carousel-control-next" href="#pictureGallery" role="button" data-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:black;"></span>
+						    <span class="sr-only" style="color: white;">Next</span>
+						  </a>
+					</div>
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+</div>
+
+
+
+
+	
+	
+	
+	<script type="text/javascript">
+
+	
+
+	$(document).ready(function() {
+  		$.ajaxSetup({ cache: true });
+  		$.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+   		 FB.init({
+     	 appId: '368212807366654',
+     	 version: 'v2.7' // or v2.1, v2.2, v2.3, ...
+   		 });     
+ 
+  });
+});
+
+
+		function handleButtonChanges(obj){
+
+		
+			if(obj.id=="resButton"){
+			  var whishObj = document.getElementById("wishButton");	
+			  var resClasses = obj.classList;
+			  var wishClasses = whishObj.classList;
+			  if(resClasses.contains("btn-link")){
+			  	resClasses.remove('btn-link');
+			  	resClasses.add('btn-dark');
+			  	resClasses.remove('black');
+			  	resClasses.add('white');
+			  	resClasses.remove('white-background');
+			  	resClasses.add('black-background');
+			  	wishClasses.remove('btn-dark');
+			  	wishClasses.add('btn-link');
+			  	wishClasses.remove('black-background');
+			  	wishClasses.add('white-background');
+			  	wishClasses.remove('white');
+			  	wishClasses.add('black');
+			  }
+			}else{
+				var wishClasses = obj.classList;
+				var resClasses = document.getElementById('resButton').classList;
+				if(wishClasses.contains('btn-link')){
+					wishClasses.remove('btn-link');
+				  	wishClasses.add('btn-dark');
+				  	wishClasses.remove('black');
+				  	wishClasses.add('white');
+				  	wishClasses.remove('white-background');
+				  	wishClasses.add('black-background');
+				  	resClasses.remove('btn-dark');
+				  	resClasses.add('btn-link');
+				  	resClasses.remove('black-background');
+				  	resClasses.add('white-background');
+				  	resClasses.remove('white');
+				  	resClasses.add('black');
+
+				}
+
+
+			}
+			console.log(obj);
+
+		}
+
+		function loadJSON (url) {
+
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("GET", url ,false); 
+			xmlhttp.onreadystatechange = function () {
+				if (xmlhttp.readyState == 4 ) {
+					if (xmlhttp.status == "200")
+						jsonDoc=xmlhttp.responseText;
+					else{
+						jsonDoc="";
+
+					}
+				}
+			};
+			xmlhttp.send(); 
+
+			return jsonDoc;
+
+
+
+		}
+
+		function changeButtonStates(index){
+
+				var navhead = document.getElementById("myNavBar");
+				var btns = navhead.getElementsByClassName("btn");
+
+				for (var i = 0; i < btns.length; i++) btns[i].className = "btn";
+				
+				btns[index].className += " __current__";
+				document.getElementById("mobilebutton").className += " mobile";
+				document.getElementById("desktopbutton").className += " desktop";
+
+		}
+
+		function getLocation(){
+
+			jsonDoc=loadJSON("http://ip-api.com/json");
+        
+	        if(jsonDoc!=""){
+	        	document.getElementById("sub").disabled=false;
+	        	locJSONObj =  JSON.parse (jsonDoc);
+	        	document.getElementById("hereZip").value = locJSONObj.zip;
+	        	console.log(document.getElementById("hereZip").value);
+	        }
+
+	    changeButtonStates(0);
+
+
+        
+    }
+
+	    
+
+</script>
+
+</body>
+</html>
